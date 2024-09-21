@@ -1,12 +1,9 @@
-# Daily Email Report Automation with Python, Docker, and Kubernetes
 
----
+# Daily Email Report Automation with Python, Docker, and Kubernetes
 
 ## Overview
 
 This project demonstrates how to automate sending daily email reports using Python. The script is designed to run seamlessly on a local machine, in containers using Docker, and in orchestration environments such as Kubernetes. The project provides a scalable, portable, and automated solution to streamline email reporting.
-
----
 
 ## Table of Contents
 
@@ -20,9 +17,8 @@ This project demonstrates how to automate sending daily email reports using Pyth
 6. [Testing the Script](#testing-the-script)
 7. [Docker Containerization](#docker-containerization)
 8. [Deploying on Kubernetes](#deploying-on-kubernetes)
-9. [Conclusion](#conclusion)
-
----
+9. [Screenshots](#screenshots)
+10. [Conclusion](#conclusion)
 
 ## Introduction
 
@@ -32,8 +28,6 @@ This documentation provides a step-by-step guide to implementing and deploying a
 - Automated daily email reporting for monitoring systems.
 - Daily logs or updates delivered via email.
 - Periodic reminders sent programmatically.
-
----
 
 ## Prerequisites
 
@@ -53,9 +47,6 @@ To install Python dependencies:
 ```bash
 pip install schedule
 ```
-
----
-
 ## Features
 
 - **Automated Scheduling**: The script sends daily email reports at a predefined time using the `schedule` library.
@@ -63,8 +54,6 @@ pip install schedule
 - **Kubernetes Support**: Supports deployment in Kubernetes, enabling scalable, fault-tolerant deployment.
 - **Email Sending**: Uses SMTP to send emails, including attachment support for more complex reports.
 - **Scalable**: Can be easily scaled using Docker or Kubernetes in enterprise environments.
-
----
 
 ## Installation and Setup
 
@@ -133,8 +122,6 @@ Add the following cron job to run the script daily at 9:00 AM:
 0 9 * * * /usr/bin/python3 /path/to/email_report.py
 ```
 
----
-
 ## Running the Script
 
 Once the configuration is set, you can start the script using:
@@ -144,8 +131,6 @@ python email_report.py
 ```
 
 This will start sending the daily reports based on the scheduled time set in the script.
-
----
 
 ## Testing the Script
 
@@ -179,8 +164,6 @@ python -m unittest test_email_report.py
 
 This will validate the creation of reports and ensure that emails are sent correctly.
 
----
-
 ## Docker Containerization
 
 To run the Python script inside a Docker container, follow these steps.
@@ -210,8 +193,6 @@ docker build -t email-reporter .
 ```bash
 docker run -d --name email-reporter email-reporter
 ```
-
----
 
 ## Deploying on Kubernetes
 
@@ -265,7 +246,18 @@ You can scale the deployment to multiple instances for load balancing:
 kubectl scale deployment email-reporter-deployment --replicas=3
 ```
 
----
+## Screenshots
+
+Below are the screenshots of the program running and the test results:
+
+- **Program Running**  
+  ![Program Running](assets/program_running.png)
+
+- **Test Script Running**  
+  ![Test Script](assets/test_script.png)
+
+- **Test Results**  
+  ![Test Results](assets/test_results.png)
 
 ## Conclusion
 
@@ -273,14 +265,9 @@ This Python-based email automation system, combined with Docker and Kubernetes, 
 
 For further improvements, you can add logging, error handling, and more customizable report generation mechanisms.
 
----
-
 ### References
 
 - Python `smtplib`: https://docs.python.org/3/library/smtplib.html
 - Docker: https://www.docker.com/
 - Kubernetes: https://kubernetes.io/
-
----
-
-By following this guide, you will be able to set up an automated, containerized email report system that can be run locally, on a server, or in a cloud environment.
+```
